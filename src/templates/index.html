@@ -3,5 +3,10 @@
 {% block head_title %}{% endblock %}
 
 {% block content %}
-<p>This is more about stuff {{ title }}</p>
+
+{{ title }}
+{{ request.user }}
+{{ request.path }}
+{{ user }}
+{{ user.is_authenticated }}
 {% endblock %}

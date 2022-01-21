@@ -3,8 +3,9 @@ from django.shortcuts import render
 
 
 def home_page(request):
-    my_title = "Help Desk Blog"
-    return render(request, "index.html", {"title": my_title})
+    my_title = "Help Desk Blog: "
+    context = {"title": my_title}
+    return render(request, "index.html", context)
 
 
 def about_page(request):
