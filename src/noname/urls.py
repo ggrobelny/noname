@@ -19,11 +19,11 @@ from django.urls import path, re_path
 from .views import (
     home_page,
     about_page,
-    content_page)
+    contact_page)
 
 urlpatterns = [
     path('', home_page),
     re_path(r'admin/$', admin.site.urls),
     path('about/', about_page),
-    path('content/', content_page),
+    path('contact/', contact_page),
 ]
