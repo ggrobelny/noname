@@ -12,4 +12,4 @@ def about_page(request):
 
 
 def contact_page(request):
-    return render(request, "index.html", {"title": "Contact us"})
+    return render(request, "contact.html", {"title": "Contact us"})
