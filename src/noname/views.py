@@ -20,4 +20,9 @@ def contact_page(request):
     form = ContactForm(request.POST or None)
     if form.is_valid():
         print(form.cleaned_data)
-    return render(request, "form.html", {"title": "Contact us"})
+        form = ContactForm
+    context = {
+        "title": "Contact us", 
+        "form": form
+    }
+    return render(request, "form.html", context)
