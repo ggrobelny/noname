@@ -15,4 +15,5 @@ def about_page(request):
 
 
 def contact_page(request):
+    print(request.POST)
     return render(request, "form.html", {"title": "Contact us"})
