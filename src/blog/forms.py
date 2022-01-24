@@ -1,9 +1,7 @@
-from django import form
-from django import fforms
-from django.forms import forms
+from django import forms
 
 
 class BlogPostForm(forms.Form):
     title = forms.CharField()
     slug = forms.SlugField()
-    content = forms.CharField(widget=forms.Taxtarea)
+    content = forms.CharField(widget=forms.Textarea)
