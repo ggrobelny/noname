@@ -20,7 +20,9 @@ def blog_post_create_view(request):
     form = BlogPostModelForm(request.POST or None)
     if form.is_valid():
         # obj = BlogPost.objects.create(**form.cleaned_data)
-        form.save()
+        obj = form.save(commit=False)
+        # obj.title = form.cleaned_data.get("title") + "0"
+        obj.save()
         form = BlogPostModelForm()
     template_name = 'form.html'
     context = {'form': form}
