@@ -1,4 +1,5 @@
-from turtle import title
+from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
 from django.shortcuts import render, get_object_or_404
 from django.http import Http404
 # Create your views here.
@@ -6,6 +7,8 @@ from .models import BlogPost
 from .forms import BlogPostModelForm
 
 
+@login_required
+@staff_member_required
 def blog_post_list_view(request):
     # list of the objects
     # could be search
