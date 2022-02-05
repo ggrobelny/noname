@@ -1,13 +1,14 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from .forms import ContactForm
+from blog.models import BlogPost 
 
 
 def home_page(request):
     my_title = "Help Desk Blog: "
-    context = {"title": "Log in, please:"}
-    if request.user.is_authenticated:
-        context = {"title": my_title, "my_list": [1, 2, 3, 4, 5]}
+    qs = BlogPost.objects.all()[:5]
+    context = {"title": "Welcome", "blog_list": qs}
+
     return render(request, "index.html", context)
 
 
